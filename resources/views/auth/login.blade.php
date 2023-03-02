@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>ORCA RECOVERY Manager</title>
+        <title>ALT RECOVERY Manager</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="ALT RECOVERY Manager By Alliages Technologies" name="description" />
         <meta content="ALT RECOVERY Manager" name="Clement ESSOMBA" />
@@ -60,7 +60,7 @@
 
                                                 </div>
                                                 <div class="mt-4">
-                                                    <button class="btn btn-dark btn-block waves-effect waves-light" type="submit">Se Connecter</button>
+                                                    <button class="btn btn-dark btn-block waves-effect waves-light" type="submit">Se connecter</button>
                                                 </div>
 
                                             </div>
