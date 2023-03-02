@@ -1,5 +1,5 @@
 <footer class="main-footer">
-    <h5 class="font-size-18 font-bold" style="font-weight: 700"><span class="text-dark">ALT</span> <span style="background: #FFFFFF; padding:5px 10px; color:#333333" class="">RECOVERY</span> <span style="background: #333333; padding:5px 10px; color:#FFFFFF" class="text-light">MANAGER</span></h5>
+    <h5 class="font-size-18 font-bold" style="font-weight: 700"><span class="text-dark">ORCA</span> <span style="background: #FFFFFF; padding:5px 10px; color:#333333" class="">RECOVERY</span> <span style="background: #333333; padding:5px 10px; color:#FFFFFF" class="text-light">MANAGER</span></h5>
 
   </footer>
 

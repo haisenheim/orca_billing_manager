@@ -5,8 +5,8 @@
         <meta charset="utf-8" />
         <title>ORCA RECOVERY Manager</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="ALT RECOVERY Manager By Alliages Technologies" name="description" />
-        <meta content="ALT RECOVERY Manager" name="Clement ESSOMBA" />
+        <meta content="ORCA RECOVERY Manager By Alliages Technologies" name="description" />
+        <meta content="ORCA RECOVERY Manager" name="Clement ESSOMBA" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{ asset('img/logo.png') }}">
 
@@ -34,7 +34,7 @@
                             <div class="card-body p-4">
                                  <div class="text-center mb-5">
                                     <a href="/" class="logo"><img src="{{ asset('img/logo.png') }}" style="" height="120" alt="logo"></a>
-                                    <h5 class="font-size-24 font-bold mb-4 text-ping" style="margin-top:20px; font-weight: 900"><span class="text-dark">ALT</span> <span style="background: #FFFFFF; padding:5px 10px; color:#333333" class="">RECOVERY</span> <span style="background: #333333; padding:5px 10px; color:#FFFFFF" class="text-light">MANAGER</span></h5>
+                                    <h5 class="font-size-24 font-bold mb-4 text-ping" style="margin-top:20px; font-weight: 900"><span class="text-dark">ORCA</span> <span style="background: #FFFFFF; padding:5px 10px; color:#333333" class="">RECOVERY</span> <span style="background: #333333; padding:5px 10px; color:#FFFFFF" class="text-light">MANAGER</span></h5>
                                 </div>
 
                                 <div class="p-2">
