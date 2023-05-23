@@ -170,7 +170,7 @@ class ParametreController extends ExtendedController
 
     public function storeModele(Request $request){
         $data = $request->except('files');
-        $data['address'] = trim($data['address']);
+       // $data['address'] = trim($data['address']);
         $profil = Modele::create($data);
         return redirect('/admin/parametres/modeles');
     }

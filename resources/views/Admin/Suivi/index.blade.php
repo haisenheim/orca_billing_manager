@@ -764,7 +764,4 @@
     });
 </script>
 
-
-
-
 @endsection
