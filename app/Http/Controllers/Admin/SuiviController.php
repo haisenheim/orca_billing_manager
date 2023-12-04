@@ -117,6 +117,7 @@ class SuiviController extends ExtendedController
             'montant'=>$request->montant,
             'client_id'=>$request->client_id,
             'user_id'=>auth()->user()->id,
+            'numero'=>$request->facture_name,
         ]);
         $facture->name = str_pad($facture->id,6,"F0",STR_PAD_BOTH);
         $facture->save();

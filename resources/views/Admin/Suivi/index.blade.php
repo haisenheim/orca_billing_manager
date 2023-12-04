@@ -87,7 +87,7 @@
   </style>
 
 <div class="modal fade" id="addPaiementModal">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
                 <h5>Entrer un paiement</h5>
@@ -155,20 +155,21 @@
 </div>
 
 <div class="modal fade" id="addFactureModal">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h5>Nouvelle Facture</h5>
             </div>
             <div class="modal-body">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-9 col-sm-12">
-                            <div class="form-group">
-                                <select class="form-control basicAutoSelect eventsAutoComplete" id="my_clients" name="client_id"
-                                placeholder="Choisir un client..."
-                                data-url="/api/v1/clients" autocomplete="off"></select>
-                            </div>
+                    <div style="display: flex; justify-content: center;">
+                        <div class="form-group">
+                            <select class="form-control basicAutoSelect eventsAutoComplete" id="my_clients" name="client_id"
+                            placeholder="Choisir un client..."
+                            data-url="/api/v1/clients" autocomplete="off"></select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="facture_name" placeholder="Saisir le numero de facture ici" class="form-control">
                         </div>
                     </div>
                     <div class="row">
@@ -246,6 +247,7 @@
                                                             <th>MONTANT A PAYER</th>
                                                             <th>DATE</th>
                                                             <th>RESTE A PAYER</th>
+                                                            <th></th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -602,10 +604,13 @@
         reste = reste - mt;
        // console.log(reste);
         count++;
-        var tr ='<tr data-montant="'+ mt+'" data-dt="'+ dt +'"><td>'+ count +'</td><td>'+ mt +'</td><td>'+ dt +'</td><td class"text-bold">'+ reste +'</td></tr>';
+        var tr ='<tr data-montant="'+ mt+'" data-dt="'+ dt +'"><td>'+ count +'</td><td>'+ mt +'</td><td>'+ dt +'</td><td class"text-bold">'+ reste +'</td><td><span class="btn-remove btn-xs btn"><i class="fa fa-trash"></i></span></td></tr>';
         $('#mt_table').find('tbody').append(tr);
         $('#mt').val('');
         $('#mt_dt').val('');
+        $('.btn-remove').click(function(){
+            $(this).parent().parent().remove()
+        });
     });
 
     $('#btn-mt-save').click(function(){
@@ -622,6 +627,7 @@
             type:'post',
             data:{
                 echeances:echeances,montant:$('#montant').val(), dt_bl:$('#dt_bl').val(),
+                facture_name:$('#facture_name').val(),
                 client_id:$('input[name=client_id]').val(),_token:$('input[name=_token]').val()
             },
             success:function(data){

@@ -98,6 +98,7 @@
                     <tr class="">
                         <th>Date</th>
                         <th>&numero; Facture</th>
+                        <th>&numero; ORCA</th>
                         <th>Montant</th>
                         <th>Encaissements</th>
                         <th>Impayés</th>
@@ -110,6 +111,7 @@
                     <tr role="button" data-id={{ $facture->id }} class="tr-click">
                         <td>{{ date_format($facture->created_at,'d/m/Y') }}</td>
                         <td>{{ $facture->name }}</td>
+                        <td>{{ $facture->numero }}</td>
                         <td>{{ number_format($facture->montant,0,',','.') }}</td>
                         <td>{{ number_format($facture->encaissement,0,',','.') }}</td>
                         <td>{{ number_format($facture->impaye,0,',','.') }}</td>
