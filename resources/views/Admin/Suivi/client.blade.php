@@ -115,7 +115,7 @@
                         <td>{{ number_format($facture->montant,0,',','.') }}</td>
                         <td>{{ number_format($facture->encaissement,0,',','.') }}</td>
                         <td>{{ number_format($facture->impaye,0,',','.') }}</td>
-                        <td>{{ date_format($facture->delivered_at,'d/m/Y') }}</td>
+                        <td>{{ $facture->delivered_at?date_format($facture->delivered_at,'d/m/Y'):'-' }}</td>
                         <td>
                             <div class="btn-group">
                                 <button type="button" style="padding:0 0.5rem;" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"></button>
