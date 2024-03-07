@@ -17,7 +17,7 @@
 <div class="wrapper">
   <!-- Preloader -->
   <div style="background: linear-gradient(to right, #303030,#FFFFFF,#303030);" class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="{{ asset('img/logo.png') }}" alt="ORCA RECOVERY MANAGER" height="160" width="160">
+    <img class="animation__shake" src="{{ asset('img/logo.png') }}" alt="REMINDER" height="160" width="160">
   </div>
 
   <!-- Navbar -->
