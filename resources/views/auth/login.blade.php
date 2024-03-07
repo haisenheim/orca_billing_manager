@@ -3,10 +3,10 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>ALT RECOVERY Manager</title>
+        <title>REMINDER</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="ALT RECOVERY Manager By Alliages Technologies" name="description" />
-        <meta content="ALT RECOVERY Manager" name="Clement ESSOMBA" />
+        <meta content="REMINDER By Alliages Technologies" name="description" />
+        <meta content="REMINDER" name="Clement ESSOMBA" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{ asset('img/logo.png') }}">
 
