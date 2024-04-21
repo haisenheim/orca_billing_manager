@@ -33,3 +33,44 @@ Route::group(['prefix' => 'v1','namespace'=>'Api'], function () {
     Route::get('/kpi/dso','KpiController@getDso');
     Route::get('/kpi/risk','KpiController@getRisk');
 });
+
+
+Route::group(['prefix' => 'ic4a'], function () {
+    Route::post('/seeds/podcasts', function(){
+        $data = request()->all();
+        dd(request()->file_fr);
+        //$seed = Seed::find($request->seed_id);
+        $token = $data['token'];
+        $resp = [];
+        if(request()->file_fr){
+			$file = request()->file_fr;
+			$ext = $file->getClientOriginalExtension();
+			$arr_ext = array('mp3');
+			if(in_array($ext,$arr_ext)) {
+				if(!file_exists(public_path('podcasts/seeds/fr')))
+					mkdir(public_path('podcasts/seeds/fr'),0777,true);
+				$file->move(public_path('podcasts/seeds/fr'),$token.'.'.$ext);
+				$resp['fr']='podcasts/seeds/fr/'.$token.'.'.$ext;
+			}else{
+				//$request->session()->flash('danger','L\'extension de votre fichier audio en francais n\'est pas correcte !!!');
+				return response()->json("Erreur de l'audio en francais",500);
+			}
+
+		}
+        if(request()->file_en){
+			$file = request()->file_en;
+			$ext = $file->getClientOriginalExtension();
+			$arr_ext = array('mp3');
+			if(in_array($ext,$arr_ext)) {
+				if(!file_exists(public_path('podcasts/seeds/en')))
+					mkdir(public_path('podcasts/seeds/en'),0777,true);
+				$file->move(public_path('podcasts/seeds/en'),$token.'.'.$ext);
+				$resp['fr']='podcasts/seeds/en/'.$token.'.'.$ext;
+			}else{
+				//$request->session()->flash('danger','L\'extension de votre fichier audio en anglais n\'est pas correcte !!!');
+				return response()->json("Erreur de l'audio en anglaise",500);
+			}
+            return response()->json($resp);
+		}
+    });
+});
