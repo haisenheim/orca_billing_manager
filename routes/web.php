@@ -16,7 +16,11 @@ use Illuminate\Support\Facades\Mail;
 |
 */
 
+Route::get('/phpinfo',function(){
 
+    phpinfo();
+
+});
 
 Route::get('/', function () {
 	return view('auth/login');
