@@ -38,10 +38,10 @@ Route::group(['prefix' => 'v1','namespace'=>'Api'], function () {
 Route::group(['prefix' => 'ic4a'], function () {
     Route::post('/seeds/podcasts', function(){
         $data = request()->all();
-        dd(request()->file_fr);
+       // dd(request()->file_fr);
         //$seed = Seed::find($request->seed_id);
         $token = $data['token'];
-        $resp = [];
+        $resp = ['token'=>$data['token']];
         if(request()->file_fr){
 			$file = request()->file_fr;
 			$ext = $file->getClientOriginalExtension();
