@@ -65,7 +65,7 @@ Route::group(['prefix' => 'ic4a'], function () {
 				if(!file_exists(public_path('podcasts/seeds/en')))
 					mkdir(public_path('podcasts/seeds/en'),0777,true);
 				$file->move(public_path('podcasts/seeds/en'),$token.'.'.$ext);
-				$resp['fr']='podcasts/seeds/en/'.$token.'.'.$ext;
+				$resp['en']='podcasts/seeds/en/'.$token.'.'.$ext;
 			}else{
 				//$request->session()->flash('danger','L\'extension de votre fichier audio en anglais n\'est pas correcte !!!');
 				return response()->json("Erreur de l'audio en anglaise",500);
@@ -104,7 +104,7 @@ Route::group(['prefix' => 'ic4a'], function () {
 				if(!file_exists(public_path('podcasts/preseeds/en')))
 					mkdir(public_path('podcasts/preseeds/en'),0777,true);
 				$file->move(public_path('podcasts/preseeds/en'),$token.'.'.$ext);
-				$resp['fr']='podcasts/preseeds/en/'.$token.'.'.$ext;
+				$resp['en']='podcasts/preseeds/en/'.$token.'.'.$ext;
 			}else{
 				//$request->session()->flash('danger','L\'extension de votre fichier audio en anglais n\'est pas correcte !!!');
 				return response()->json("Erreur de l'audio en anglaise",500);
