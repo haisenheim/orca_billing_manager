@@ -144,4 +144,58 @@ Route::group(['prefix' => 'ic4a'], function () {
 		}
         return response()->json($resp);
     });
+
+	Route::post('/pmes/podcasts', function(){
+        $data = request()->all();
+       // dd(request()->file_fr);
+        //$seed = Seed::find($request->seed_id);
+        $token = $data['token'];
+        $resp = ['token'=>$data['token']];
+        if(request()->file_fr){
+			$file = request()->file_fr;
+			$ext = $file->getClientOriginalExtension();
+			$arr_ext = array('mp3');
+			if(in_array($ext,$arr_ext)) {
+				if(!file_exists(public_path('podcasts/pmes/fr')))
+					mkdir(public_path('podcasts/pmes/fr'),0777,true);
+				$file->move(public_path('podcasts/pmes/fr'),$token.'.'.$ext);
+				$resp['fr']='podcasts/pmes/fr/'.$token.'.'.$ext;
+			}else{
+				//$request->session()->flash('danger','L\'extension de votre fichier audio en francais n\'est pas correcte !!!');
+				return response()->json("Erreur de l'audio en francais",500);
+			}
+
+		}
+        if(request()->file_en){
+			$file = request()->file_en;
+			$ext = $file->getClientOriginalExtension();
+			$arr_ext = array('mp3');
+			if(in_array($ext,$arr_ext)) {
+				if(!file_exists(public_path('podcasts/pmes/en')))
+					mkdir(public_path('podcasts/pmes/en'),0777,true);
+				$file->move(public_path('podcasts/pmes/en'),$token.'.'.$ext);
+				$resp['en']='podcasts/pmes/en/'.$token.'.'.$ext;
+			}else{
+				//$request->session()->flash('danger','L\'extension de votre fichier audio en anglais n\'est pas correcte !!!');
+				return response()->json("Erreur de l'audio en anglaise",500);
+			}
+
+		}
+		if(request()->file_locale){
+			$file = request()->file_locale;
+			$ext = $file->getClientOriginalExtension();
+			$arr_ext = array('mp3');
+			if(in_array($ext,$arr_ext)) {
+				if(!file_exists(public_path('podcasts/pmes/locale')))
+					mkdir(public_path('podcasts/pmes/locale'),0777,true);
+				$file->move(public_path('podcasts/pmes/locale'),$token.'.'.$ext);
+				$resp['locale']='podcasts/pmes/locale/'.$token.'.'.$ext;
+			}else{
+				//$request->session()->flash('danger','L\'extension de votre fichier audio en anglais n\'est pas correcte !!!');
+				return response()->json("Erreur de l'audio en langue locale",500);
+			}
+
+		}
+        return response()->json($resp);
+    });
 });
