@@ -179,7 +179,6 @@ Route::group(['prefix' => 'ic4a'], function () {
 				//$request->session()->flash('danger','L\'extension de votre fichier audio en anglais n\'est pas correcte !!!');
 				return response()->json("Erreur de l'audio en anglaise",500);
 			}
-
 		}
 		if(request()->file_locale){
 			$file = request()->file_locale;
@@ -194,7 +193,6 @@ Route::group(['prefix' => 'ic4a'], function () {
 				//$request->session()->flash('danger','L\'extension de votre fichier audio en anglais n\'est pas correcte !!!');
 				return response()->json("Erreur de l'audio en langue locale",500);
 			}
-
 		}
         return response()->json($resp);
     });
